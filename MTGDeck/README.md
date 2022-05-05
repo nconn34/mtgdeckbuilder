@@ -1,4 +1,4 @@
-**Magic: The Gathering Deck Builder
+**Magic: The Gathering Deck Builder**
 
 #### By **Nathan Conn, Nicholas Sullivan, Chris DePastene, Erin McCulley, Amber Wilwand**
 
