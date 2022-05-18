@@ -28,7 +28,7 @@ body {
         <div class="input-group">
           <div  class="form-group" style="margin-right: 5px;">
             @* @Html.Label("Search All by Name") *@
-            @Html.TextBox("name", "Search by name", new { @class = "form-control-sm"})
+            @Html.TextBox("name", "", new { @class = "form-control-sm", placeholder="Search by name"})
           </div>
           <div class="form-group" style="margin-right: 5px;">
             @* @Html.Label("Search by Color") *@
@@ -39,11 +39,11 @@ body {
               new SelectListItem { Text = "Red", Value = "R"},
               new SelectListItem { Text = "White", Value = "W"},
               new SelectListItem { Text = "Green", Value = "G"},
-              }, "Select Color", new { @class = "form-control-sm", @style = "width:163px;" })
+              }, "Select Color", new { @class = "form-control-sm", @style = "width:163px;"})
             </div>
             <div class="form-group" style="margin-right: 5px;">
             @* @Html.Label("Search by Type") *@
-            @Html.TextBox("type",  "Search by type", new { @class = "form-control-sm"})
+            @Html.TextBox("type", "", new { @class = "form-control-sm", placeholder="Search by type"})
           </div>
         </div>
           <input type="submit" value="Search" class="btn btn-primary btn-sm" style="margin-top: 5px; width: 150px"/>
