@@ -100,8 +100,15 @@ namespace MTGDeck.Models
       RestRequest request = new RestRequest($"cards/named?fuzzy={name}", Method.GET);
 
       var response = await client.ExecuteTaskAsync(request);
+      if(response.IsSuccessful)
+        {
+          return JsonConvert.DeserializeObject<ScryfallCard>(response.Content);
+        }
+        else
+        {
+          return new ScryfallCard { };
+        }
       
-      return JsonConvert.DeserializeObject<ScryfallCard>(response.Content);
 
     }
   }

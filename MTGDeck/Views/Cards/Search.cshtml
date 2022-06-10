@@ -6,6 +6,7 @@
 @model List<Card>
 
 <h3>Search Results:</h3>
+<p>@ViewBag.result</p>
     @if (Model.Count() != 0)
     {
       @for (int i = 0; i < Model.Count; i++)
@@ -18,7 +19,14 @@
             <p>@Model[i].Mana_Cost</p>
           </div>
           <div class="card-results-img-wrap col-4">
-            <img class="card-results-img" alt="Card image" src="@Url.Content(ViewBag.CardListImages[i])"/>
+            @if(ViewBag.CardListImages[i] == "No card found")
+            {
+              <p class="no-img-err">No image found.</p>
+            } 
+            else
+            {
+              <img class="card-results-img" alt="Card image" src="@Url.Content(ViewBag.CardListImages[i])"/>
+            }
           </div>
         </div>
       }

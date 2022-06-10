@@ -137,6 +137,11 @@ hr {
   height: 250px;
 }
 
+.no-img-err {
+  text-align: center;
+  margin: 45px 0px;
+}
+
 
 /* font-family: 'Montserrat', sans-serif;
 font-family: 'Poppins', sans-serif;

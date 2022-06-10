@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using MTGDeck.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
@@ -38,8 +39,8 @@ namespace MTGDeck.Controllers
     [AllowAnonymous]
     public IActionResult Index()
         {
-            var allCards = Card.SearchCards("", "", "elf");
-            return View(allCards);
+          var allCards = Card.SearchCards("", "", "elf");
+          return View(allCards);
         }
     [AllowAnonymous]
     public IActionResult Details(string name)
@@ -84,8 +85,8 @@ namespace MTGDeck.Controllers
         }
     public void storeCardListImages(List<Card> cardList)
     {
-      // List<Card> cardList = Card.SearchCards(name, color, type);
       List<string> urlList =  new List<string>{};
+      ViewBag.result = cardList[0].Name;
       foreach(Card card in cardList)
       {
         string cardImage = Card.GetCardImage(card.Name);
