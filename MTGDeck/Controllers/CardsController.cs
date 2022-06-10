@@ -26,8 +26,7 @@ namespace MTGDeck.Controllers
     public IActionResult Search(string name, string color, string type)
     {
     List<Card> result = Card.SearchCards(name, color, type);
-    // ViewBag.NoCards = "test";
-    
+    storeCardListImages(result);
     return View(result);
     }
     public IActionResult GetCard(string name)
@@ -83,5 +82,16 @@ namespace MTGDeck.Controllers
             string cardFlavor = Card.GetFlavor(cardName);
             ViewBag.CardFlavor = cardFlavor;
         }
+    public void storeCardListImages(List<Card> cardList)
+    {
+      // List<Card> cardList = Card.SearchCards(name, color, type);
+      List<string> urlList =  new List<string>{};
+      foreach(Card card in cardList)
+      {
+        string cardImage = Card.GetCardImage(card.Name);
+        urlList.Add(cardImage);
+      }
+      ViewBag.CardListImages = urlList;
+    }
   }
 }

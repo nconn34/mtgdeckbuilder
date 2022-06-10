@@ -9,13 +9,15 @@
   
 }
 
-img {
+.card-img-top, .details-image {
   position: relative;
   margin-top: 20%;
   max-width:100%;
   height:auto;
   max-height:100%;
 }
+
+
 
 #circles img {
   width: 4vw;
@@ -75,16 +77,6 @@ hr {
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 } 
 
-.card-content {
-  border: 1px solid #eee;
-  border-radius: 5px;
-  background-color: rgb(250, 250, 250);
-  margin-bottom: 5px;
-  padding: 10px;
-  width: 700px;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-} 
-
 .search-content {
   border: 1px solid #eee;
   border-radius: 5px;
@@ -118,6 +110,23 @@ hr {
   padding-inline: 1%;
 }
 
+/* Search Page Styling */
+
+.card-content {
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background-color: rgb(250, 250, 250);
+  margin-bottom: 5px;
+  padding: 10px;
+  width: 700px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  display: flex;
+} 
+
+.card-results-img-wrap {
+  height: 200px;
+  margin-top: 0%;
+}
 
 
 /* font-family: 'Montserrat', sans-serif;

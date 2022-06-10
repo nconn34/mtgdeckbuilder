@@ -10,6 +10,8 @@
     @foreach (Card card in Model)
     {
       <li>@Html.ActionLink($"{card.Name}", "Details", new { name = card.Name })</li>
+      <img class="card-img-top" src="~/images/circle_full_set.svg" alt="" style="height: 8rem;">
+      
       @* <li>@Html.ActionLink($"{card.Colors}", "Details", new { color = card.Colors })</li>
       <li>@Html.ActionLink($"{card.Type_Line}", "Details", new { type = card.Type_Line })</li> *@
     }

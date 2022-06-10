@@ -15,7 +15,7 @@ This is how you can use the url in the viewbag
     <h3>@Model.Name</h3>
   </div>
   <div id="cardImage">
-    <img alt="Card image" src="@Url.Content(ViewBag.CardImages)"/>
+    <img class="details-image" alt="Card image" src="@Url.Content(ViewBag.CardImages)"/>
   </div>
   
   <!-- Here, we're passing in both the card info and the deck info to first save the card to the DB, then create the join entity -->

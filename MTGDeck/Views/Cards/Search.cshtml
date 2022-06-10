@@ -8,13 +8,18 @@
 <h3>Search Results:</h3>
     @if (Model.Count() != 0)
     {
-      @foreach (Card card in Model)
+      @for (int i = 0; i < Model.Count; i++)
       {
-        <div class="card-content">
-          <p>@Html.ActionLink($"{card.Name}", "Details", new { name = card.Name })</p>
-          <p>@card.Type_Line</p>
-          <p>@card.Set_Name</p>
-          <p>@card.Mana_Cost</p>
+        <div class="card-content row">
+          <div class="card-results-text-wrap col-7">
+            <p>@Html.ActionLink($"{Model[i].Name}", "Details", new { name = Model[i].Name })</p>
+            <p>@Model[i].Type_Line</p>
+            <p>@Model[i].Set_Name</p>
+            <p>@Model[i].Mana_Cost</p>
+          </div>
+          <div class="card-results-img-wrap col-4">
+            <img id="" alt="Card image" src="@Url.Content(ViewBag.CardListImages[i])" style="height: 10rem;"/>
+          </div>
         </div>
       }
     }
@@ -22,6 +27,7 @@
     {
       <p>"No cards found!"</p>
     }
+
 
 
 

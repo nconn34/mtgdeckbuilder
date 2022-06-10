@@ -49,6 +49,23 @@ namespace MTGDeck.Models
         return cardList;
       }
     }
+///////////////////////
+    public static List<ScryfallCard> SearchScryFallCards(string name, string colors, string type)
+    {
+      var apiCallTask = ApiHelper.Search(name, colors, type);
+      var result = apiCallTask.Result;
+      if (result == "No cards found.")
+      {
+        return new List<ScryfallCard> { };
+      }
+      else
+      { 
+        JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
+        List<ScryfallCard> cardList = JsonConvert.DeserializeObject<List<ScryfallCard>>(jsonResponse["data"].ToString());
+        return cardList;
+      }
+    }
+/////////////////////////
     public static Card GetCard(string name)
     {
       Card card = ApiHelper.GetCard(name).Result;
