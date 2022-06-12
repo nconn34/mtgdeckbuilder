@@ -38,10 +38,11 @@ namespace MTGDeck.Controllers
 
     [AllowAnonymous]
     public IActionResult Index()
-        {
-          var allCards = Card.SearchCards("", "", "elf");
-          return View(allCards);
-        }
+      {
+        List<Card> result = Card.SearchCards("", "", "elf");
+        storeCardListImages(result);
+        return View(result);
+      }
     [AllowAnonymous]
     public IActionResult Details(string name)
     {

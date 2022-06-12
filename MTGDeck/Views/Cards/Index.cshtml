@@ -3,7 +3,7 @@
 }
 
 @using MTGDeck.Models;
-@model IEnumerable<MTGDeck.Models.Card>
+@model List<Card>;
 <style>
 body {
   background-image: url('https://get.wallhere.com/photo/sky-clouds-fantasy-city-ArtStation-artwork-fantasy-art-1747289.jpg');
@@ -53,12 +53,13 @@ body {
 </div>
   <div class="row row-cols-2 row-cols-md-2 g-4" id="cardsDiv" class="d-flex justify-content-center">
     <!-- <div class="cardsBackground" style="height: 100vh"> </div> -->
-    @foreach (Card card in Model)
+    @for (int i = 0; i < Model.Count; i++)
     {
       <div class="card" style="width: 18rem;">
+        @* card images can be accessed by using ' src="@Url.Content(ViewBag.CardListImages[i]) ' as image source *@
         <img class="card-img-top" src="~/images/circle_full_set.svg" alt="Elemental magic orbs" style="height: 8rem;">
         <div class="card-body">
-          <p class="card-text">@Html.ActionLink($"{card.Name}", "Details", new { name = card.Name })</p>
+          <p class="card-text">@Html.ActionLink($"{Model[i].Name}", "Details", new { name = Model[i].Name })</p>
         </div>
       </div>
     }
